@@ -19,7 +19,7 @@ keys.forEach(function (charKeyBtn) { // Adiciona uma função para cada Botão d
 clearBtn.addEventListener('click', function () {
     input.value = ""; // Limpa o Valor do Input
     input.classList.remove('error');
-    input.focus(); // Volta a focar no Input
+    input.disabled = false;
 });
 
 equalBtn.addEventListener('click', calculate);
@@ -54,6 +54,7 @@ function calculate() {
     } catch (error) {
         input.value = "Error"; // Mostra "Error" se houver um erro
         input.classList.add('error');
+        input.disabled = true;
     }
 }
 
