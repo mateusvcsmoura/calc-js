@@ -19,7 +19,11 @@ keys.forEach(function (charKeyBtn) { // Adiciona uma função para cada Botão d
 clearBtn.addEventListener('click', function () {
     input.value = ""; // Limpa o Valor do Input
     input.classList.remove('error');
-    input.focus(); // Volta a focar no Input
+    input.disabled = false;
+
+    keys.forEach(function (charKeyBtn) {
+        charKeyBtn.disabled = false; // Habilita os Botões novamente
+    }); 
 });
 
 equalBtn.addEventListener('click', calculate);
@@ -54,6 +58,11 @@ function calculate() {
     } catch (error) {
         input.value = "Error"; // Mostra "Error" se houver um erro
         input.classList.add('error');
+        input.disabled = true;
+        
+        keys.forEach(function (charKeyBtn) {
+            charKeyBtn.disabled = true; // Desabilita os botões enquanto houver um erro
+        });
     }
 }
 
@@ -76,4 +85,3 @@ switchThemeBtn.addEventListener('click', function () {
         main.dataset.theme = 'dark';
     }
 });
-
