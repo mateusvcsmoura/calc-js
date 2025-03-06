@@ -24,6 +24,8 @@ clearBtn.addEventListener('click', function () {
     keys.forEach(function (charKeyBtn) {
         charKeyBtn.disabled = false; // Habilita os Botões novamente
     }); 
+
+    equalBtn.disabled = false; // Reabilita o Botão de Cálculo
 });
 
 equalBtn.addEventListener('click', calculate);
@@ -63,6 +65,8 @@ function calculate() {
         keys.forEach(function (charKeyBtn) {
             charKeyBtn.disabled = true; // Desabilita os botões enquanto houver um erro
         });
+
+        equalBtn.disabled = true; // Desabilita o Botão de Cálculo
     }
 }
 
