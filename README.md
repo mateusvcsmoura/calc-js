@@ -19,7 +19,7 @@
 
 1. Clone o repositório ou baixe os arquivos:
    ```bash
-   git clone https://github.com/seu-usuario/Calc.js.git
+   git clone https://github.com/mateusvcsmoura/calc.js.git
    ```
 
 2. Abra o arquivo `index.html` no seu navegador de preferência.
